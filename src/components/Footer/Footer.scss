@@ -1,0 +1,60 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff6e5;
+  width: 100%;
+  height: 96px;
+  padding: 70px 35px;
+
+  .description {
+    .text {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
+    border: 2px solid black;
+    transition: .9s;
+
+    .logoIco {
+      height: 64px;
+      width: 64px;
+      cursor: pointer;
+      transition: 1s;
+    }
+  }
+
+  .logo:hover {
+    border: 2px solid #ffd789;
+    transition: .9s;
+
+    .logoIco {
+      height: 70px;
+      width: 70px;
+      transition: 1s;
+    }
+  }
+
+  .socseti {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .ico {
+      height: 48px;
+      width: 48px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  }
+}

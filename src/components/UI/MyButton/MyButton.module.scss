@@ -1,0 +1,36 @@
+.default_btn,
+.bucket_btn,
+.back_btn,
+.nf_btn {
+  background-color: #ffd789;
+  border: 0;
+  border-radius: 5px;
+  color: black;
+  transition-duration: .5s;
+  cursor: pointer;
+}
+
+.bucket_btn {
+  width: 200px;
+  height: 35px;
+}
+
+.back_btn {
+  height: 30px;
+  width: 70px;
+  margin-left: 20px;
+}
+
+.nf_btn {
+  height: 50px;
+  width: 250px;
+  font-size: 20px;
+}
+
+.default_btn:hover,
+.bucket_btn:hover,
+.back_btn:hover,
+.nf_btn:hover {
+  background-color: #ffc44d;
+  transition-duration: .5s;
+}

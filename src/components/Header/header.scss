@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  padding: 0 35px;
+  background-color: #fff6e5;
+  border-bottom: 2px solid black;
+}
+
+.left_header {
+  .logo_img {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+  }
+}
+
+.center_header {
+  .name {
+    font-size: 32px;
+    letter-spacing: 15px;
+    cursor: pointer;
+    transition: .9s;
+  }
+
+  .name:hover {
+    letter-spacing: 20px;
+    transition: .9s;
+  }
+}
+
+.right_header {
+  .basket_img {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+  }
+}

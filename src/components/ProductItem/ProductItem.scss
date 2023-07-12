@@ -1,0 +1,36 @@
+.product_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid #ffd789;
+  border-radius: 10px;
+  width: 400px;
+  height: 550px;
+  margin: 15px 5px;
+  padding: 10px;
+  background: white;
+  transition-duration: .5s;
+
+  .product_name {
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .product_name:hover {
+    text-decoration: underline black;
+  }
+
+  .img {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+.product_card:hover {
+  box-shadow:  0 0 25px #31453f33;
+  transition-duration: .5s;
+}

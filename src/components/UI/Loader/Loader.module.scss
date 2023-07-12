@@ -1,0 +1,29 @@
+.loader {
+  background-color: #fff6e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 260px;
+
+  .circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 22px solid #ffd789;
+    border-bottom-color: transparent;
+    box-sizing: border-box;
+    animation: rotation .8s linear infinite;
+
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
