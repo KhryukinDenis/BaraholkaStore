@@ -1,8 +1,8 @@
 import React, {FC, useEffect, useState} from 'react';
-import ProductList from "../ProductList/ProductList";
-import { IProduct} from "../../types/types";
+import ProductList from "../../ProductList/ProductList";
+import { IProduct} from "../../../types/types";
 import axios from "axios";
-import Loader from "../UI/Loader/Loader";
+import Loader from "../../UI/Loader/Loader";
 
 interface IProductListPageProps {
     onProductAdd: (newProduct: IProduct) => void;
