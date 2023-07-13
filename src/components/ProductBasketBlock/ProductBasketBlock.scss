@@ -1,8 +1,58 @@
 .block {
-  width: 90%;
-  height: 300px;
-  border: 2px solid black;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 300px;
+  border: 1px solid #ffd789;
+  border-radius: 10px;
+  background-color: white;
+  margin: 15px;
+  padding: 0 40px;
+  transition-duration: .5s;
+
+  .left_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 220px;
+      width: 220px;
+    }
+  }
+
+  .center_block {
+    margin: 0 80px 0 125px;
+    width: 80%;
+
+    .category,
+    .title,
+    .price {
+      margin-bottom: 10px;
+    }
+
+    .category {
+      font-size: 24px;
+      letter-spacing: 0.05em;
+    }
+
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 20px;
+    }
+  }
+
+  .right_block {
+    width: 120px;
+  }
+}
+
+.block:hover {
+  box-shadow:  0 0 25px #31453f33;
+  transition-duration: .5s;
 }
