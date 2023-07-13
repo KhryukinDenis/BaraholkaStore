@@ -1,11 +1,10 @@
 import React, {FC, useEffect, useState} from 'react';
 import './ProductDetailPage.scss'
-import {IProduct} from "../../../types/types";
+import {IProduct} from "../../types/types";
 import axios from "axios";
 import {useNavigate, useParams} from "react-router-dom";
-import MyButton, {ButtonVariants} from "../../UI/MyButton/MyButton";
-import Loader from "../../UI/Loader/Loader";
-import productItem from "../../ProductItem/ProductItem";
+import MyButton, {ButtonVariants} from "../UI/MyButton/MyButton";
+import Loader from "../UI/Loader/Loader";
 
 interface ProductPageParams {
     id: string;
@@ -40,7 +39,7 @@ const ProductDetailPage: FC = () => {
                     :
                     <div className="productDetail">
                         <div className="top">
-                            <MyButton variant={ButtonVariants.BACK} onClick={() => navigate(-1)}>Назад</MyButton>
+                            <MyButton variant={ButtonVariants.BACK} onClick={() => navigate('/')}>Назад</MyButton>
                             <h1 className="title">{product?.title}</h1>
                         </div>
                         <div className="content">
