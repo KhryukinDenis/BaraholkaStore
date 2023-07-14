@@ -4,6 +4,7 @@ import { IProduct} from "../../../types/types";
 import Loader from "../../UI/Loader/Loader";
 import {useAppDispatch, useAppSelector} from "../../../hooks/redux";
 import {fetchProducts} from "../../../store/reducers/ActionsCreators";
+import '../ProductListPage/ProductListPage.scss'
 import NotFound from "../../NotFound/NotFound";
 
 interface IProductListPageProps {
@@ -12,7 +13,7 @@ interface IProductListPageProps {
 
 const ProductListPage: FC<IProductListPageProps> = ({onProductAdd}) => {
     const dispatch = useAppDispatch()
-    const {products, isLoading, error} = useAppSelector(state => state.productReducer)
+    const {isLoading, error} = useAppSelector(state => state.productReducer)
 
     useEffect(() => {
         dispatch(fetchProducts())
@@ -21,8 +22,8 @@ const ProductListPage: FC<IProductListPageProps> = ({onProductAdd}) => {
     return (
         <div className="content">
             {isLoading && <Loader/>}
-            {error && <NotFound/>}
-            <ProductList products={products} onProductAdd={onProductAdd} />
+            {error && <div className="error">{error}<NotFound/></div>}
+            {!isLoading && <ProductList onProductAdd={onProductAdd} />}
         </div>
     );
 };

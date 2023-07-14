@@ -1,16 +1,19 @@
-import React, {FC, useContext} from 'react';
+import React, {FC} from 'react';
 import {IProduct} from "../../types/types";
 import ProductItem from "../ProductItem/ProductItem";
 import '../ProductList/ProductList.scss'
 import {useNavigate} from "react-router-dom";
+import {useAppSelector} from "../../hooks/redux";
 
 interface ProductListProps {
-    products: IProduct[];
     onProductAdd: (newProduct: IProduct) => void;
 }
 
-const ProductList: FC<ProductListProps> = ({products, onProductAdd}) => {
+const ProductList: FC<ProductListProps> = ({onProductAdd}) => {
     const navigate = useNavigate();
+
+    const {products} = useAppSelector(state => state.productReducer)
+
     return (
         <div className="product_list">
             {products.map(product =>

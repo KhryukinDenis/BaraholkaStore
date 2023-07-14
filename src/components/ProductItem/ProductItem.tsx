@@ -2,6 +2,8 @@ import React, {FC} from 'react';
 import {IProduct} from "../../types/types";
 import '../ProductItem/ProductItem.scss'
 import MyButton, {ButtonVariants} from "../UI/MyButton/MyButton";
+import {onProductSelect} from "../../store/reducers/ProductSlice";
+import {useAppDispatch} from "../../hooks/redux";
 
 interface ProductItemProps {
     product: IProduct;
@@ -10,10 +12,16 @@ interface ProductItemProps {
 }
 
 const ProductItem: FC<ProductItemProps> = ({product, goToDetailPage, onProductAdd}) => {
+    const dispatch = useAppDispatch()
+
+    const handleProductSelect = (product: IProduct) => {
+        goToDetailPage((product));
+        dispatch(onProductSelect(product));
+    }
 
     return (
         <div className="product_card">
-            <div onClick={() => goToDetailPage((product))} className="product_name">{product.title}</div>
+            <div onClick={() => handleProductSelect(product)} className="product_name">{product.title}</div>
             <div>
                 <img className="img" src={product.image} alt=''/>
             </div>
