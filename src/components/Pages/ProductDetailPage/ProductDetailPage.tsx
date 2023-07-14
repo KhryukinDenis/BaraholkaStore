@@ -5,10 +5,6 @@ import MyButton, {ButtonVariants} from "../../UI/MyButton/MyButton";
 import Loader from "../../UI/Loader/Loader";
 import {useAppSelector} from "../../../hooks/redux";
 
-interface ProductPageParams {
-    id: string;
-}
-
 const ProductDetailPage: FC = () => {
     const navigate = useNavigate()
     const {product, isLoading} = useAppSelector(state => state.productReducer)
