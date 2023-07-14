@@ -1,0 +1,21 @@
+.basket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 62px;
+  width: 100%;
+  background-color: #fff6e5;
+
+  h1 {
+    font-size: 36px;
+    margin: 15px 0;
+    font-weight: normal;
+  }
+
+  .productBlockList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
