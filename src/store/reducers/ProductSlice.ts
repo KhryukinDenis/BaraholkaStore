@@ -4,12 +4,14 @@ import {fetchProducts} from "./ActionsCreators";
 
 interface ProductState {
     products: IProduct[];
+    product: IProduct | null;
     isLoading: boolean;
     error: string;
 }
 
 const initialState: ProductState = {
     products: [],
+    product: null,
     isLoading: false,
     error: '',
 }
@@ -17,7 +19,13 @@ const initialState: ProductState = {
 export const productSlice = createSlice({
     name: 'product',
     initialState,
-    reducers: {},
+    reducers: {
+        onProductSelect: (state, action: PayloadAction<IProduct>) => {
+            return {
+            ...state, product: action.payload
+            }
+        }
+    },
     extraReducers: {
         [fetchProducts.fulfilled.type]: (state, action: PayloadAction<IProduct[]>) => {
             state.isLoading = false;
@@ -34,4 +42,5 @@ export const productSlice = createSlice({
     },
 })
 
+export const {onProductSelect} = productSlice.actions;
 export default productSlice.reducer;

@@ -1,35 +1,17 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import './ProductDetailPage.scss'
-import {IProduct} from "../../../types/types";
-import axios from "axios";
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import MyButton, {ButtonVariants} from "../../UI/MyButton/MyButton";
 import Loader from "../../UI/Loader/Loader";
+import {useAppSelector} from "../../../hooks/redux";
 
 interface ProductPageParams {
     id: string;
 }
 
 const ProductDetailPage: FC = () => {
-    const [product, setProduct] = useState<IProduct | null>(null)
-    const params = useParams<ProductPageParams | any>()
     const navigate = useNavigate()
-    const [isLoading, setIsLoading] = useState(false)
-
-    useEffect(() => {
-        fetchProduct()
-    }, []);
-
-    async function fetchProduct() {
-        try {
-            setIsLoading(true);
-            const response = await axios.get<IProduct>('https://fakestoreapi.com/products/' + params.id);
-            setProduct(response.data);
-            setIsLoading(false);
-        } catch (e) {
-            console.log(e);
-        }
-    }
+    const {product, isLoading} = useAppSelector(state => state.productReducer)
 
     return (
         <div className="productDetailPage">
